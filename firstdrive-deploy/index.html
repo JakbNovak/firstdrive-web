@@ -765,7 +765,7 @@ function apiGet(endpoint){return fetch('/api/'+endpoint).then(r=>r.json());}
   document.getElementById('stat-price').textContent = 'od '+CONFIG.prices.min15;
   document.getElementById('pp-price').textContent = CONFIG.prices.presale3;
   document.getElementById('pp-orig').textContent = CONFIG.prices.min30*3;
-  document.getElementById('pp-cap').textContent = CONFIG.presaleCapacity;
+  var _ppcap=document.getElementById('pp-cap');if(_ppcap)_ppcap.textContent = CONFIG.presaleCapacity;
   document.getElementById('pkg1-price').textContent = CONFIG.prices.presale3+' Kč';
   document.getElementById('pkg2-price').textContent = (CONFIG.prices.presale3*2)+' Kč';
   document.getElementById('pp-refund-date').textContent = CONFIG.refundDate||'—';
