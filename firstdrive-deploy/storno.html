@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Storno podmínky — FirstDrive Simulator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--em:#34d399;--cream:#DBD5CD;--muted:#999B96;--bg:#111;--border:rgba(52,211,153,.18)}
+html,body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--cream);min-height:100vh}
+nav{position:sticky;top:0;z-index:100;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-brand{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--em);text-decoration:none}
+.nav-back{font-size:.78rem;color:var(--muted);text-decoration:none;border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:20px;transition:color .2s,border-color .2s}
+.nav-back:hover{color:var(--cream);border-color:var(--border)}
+.page{max-width:760px;margin:0 auto;padding:60px 28px 80px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:8px;color:var(--cream)}
+.subtitle{font-size:.82rem;color:var(--muted);margin-bottom:48px}
+h2{font-size:1rem;font-weight:700;color:var(--em);letter-spacing:.06em;text-transform:uppercase;margin:36px 0 12px}
+p{font-size:.9rem;line-height:1.75;color:rgba(219,213,205,.85);margin-bottom:12px}
+ul{font-size:.9rem;line-height:1.75;color:rgba(219,213,205,.85);padding-left:20px;margin-bottom:12px}
+li{margin-bottom:6px}
+.highlight{background:rgba(52,211,153,.07);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight p{margin:0;color:var(--cream)}
+.warn{background:rgba(255,180,0,.05);border:1px solid rgba(255,180,0,.2);border-radius:10px;padding:16px 20px;margin:20px 0}
+.warn p{margin:0;color:rgba(219,213,205,.9)}
+footer{text-align:center;padding:24px 28px;border-top:1px solid rgba(255,255,255,.05);font-size:.72rem;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--em)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-brand">FirstDrive</a>
+  <a href="/" class="nav-back">← Zpět na web</a>
+</nav>
+
+<div class="page">
+  <h1>Storno podmínky</h1>
+  <p class="subtitle">Platné od 1. 1. 2025 · Prodej poukazů na jízdy v simulátoru</p>
+
+  <h2>Právo na odstoupení od smlouvy</h2>
+  <p>Poukaz na jízdu v simulátoru je digitálním zbožím (elektronický kód zaslaný e-mailem). Dle § 1837 písm. l) občanského zákoníku <strong>nemáte právo na zákonné odstoupení od smlouvy ve lhůtě 14 dnů</strong>, jakmile byl poukaz doručen (zaslán e-mailem), a to i bez výslovného souhlasu se začátkem plnění před uplynutím lhůty — o tomto jste informováni při objednávce.</p>
+
+  <h2>Předprodej — záruka vrácení peněz při neotevření</h2>
+  <div class="highlight">
+    <p>Pokud se provozovna FirstDrive neotevře do data vrácení uvedeného v potvrzení objednávky, vrátíme <strong>100 % zaplacené částky</strong> bankovním převodem na účet, ze kterého byla platba přijata. Vrácení provedeme do <strong>14 dnů</strong> od tohoto data — automaticky, bez nutnosti žádat.</p>
+  </div>
+
+  <h2>Nevyužitý poukaz</h2>
+  <ul>
+    <li>Nevyužitý poukaz <strong>nepropadá</strong> — je platný po celou dobu existence provozovny.</li>
+    <li>Poukaz lze bez omezení převést na jinou osobu.</li>
+    <li>Na zpětný odkup nevyužitého poukazu (po otevření provozovny) nevzniká nárok.</li>
+  </ul>
+
+  <h2>Zrušení rezervace jízdy</h2>
+  <p>Po otevření provozovny lze konkrétní rezervaci jízdy zrušit nebo přeložit nejpozději <strong>24 hodin předem</strong> bez jakéhokoliv poplatku. Poukaz zůstává platný k pozdějšímu využití. Zrušení méně než 24 hodin předem nebo nedostavení se bez zrušení (no-show) se počítá jako vyčerpaná jízda.</p>
+
+  <div class="warn">
+    <p><strong>Výjimka:</strong> V případě technické závady na simulátoru, která znemožní jízdu, nabídneme náhradní termín nebo vrácení hodnoty nevyužité jízdy na poukaz.</p>
+  </div>
+
+  <h2>Jak podat žádost</h2>
+  <p>V případě dotazů k objednávce nebo žádosti o pomoc nás kontaktujte na [__]. Uveďte variabilní symbol objednávky. Reagujeme do 2 pracovních dnů.</p>
+</div>
+
+<footer>
+  &copy; 2025 Safe Learning Hub z.s. ·
+  <a href="/obchodni-podminky.html">Obchodní podmínky</a> ·
+  <a href="/gdpr.html">GDPR</a> ·
+  <a href="/storno.html">Storno</a>
+</footer>
+</body>
+</html>
