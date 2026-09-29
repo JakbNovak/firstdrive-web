@@ -902,7 +902,7 @@ function loadCounts(){
 loadCounts();
 
 /* ── PŘEDPRODEJ ── */
-let selectedPkgs=1;
+var selectedPkgs=1;
 function selectPkg(card){
   document.querySelectorAll('.pkg-card').forEach(c=>c.classList.remove('active'));
   card.classList.add('active');
