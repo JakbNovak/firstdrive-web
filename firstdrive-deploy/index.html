@@ -745,7 +745,7 @@ const CONFIG = {
   refundDate: null,
   presaleCapacity: 50,
   prices: { min15:149, min30:199, vr:49, happyHour30:139, family30:349, perm5:799, rent1h:349, rent2h:649, presale3:399 },
-  contestTime: '[čas]',
+  contestTime: null,
   contestPrize: 500,
   bankAccount: '2802954475/2010',
   bankIBAN: 'CZ7620100000002802954475'
@@ -762,17 +762,22 @@ function apiGet(endpoint){return fetch('/api/'+endpoint).then(r=>r.json());}
   var lct = document.getElementById('loc-card-title'); if(lct) lct.textContent = locCardTitle;
   var lcd = document.getElementById('loc-card-desc'); if(lcd) lcd.textContent = locCardDesc;
   if(CONFIG.location) document.getElementById('faq-kde-a').textContent = CONFIG.address||CONFIG.location;
-  document.getElementById('stat-price').textContent = 'od '+CONFIG.prices.min15;
-  document.getElementById('pp-price').textContent = CONFIG.prices.presale3;
-  document.getElementById('pp-orig').textContent = CONFIG.prices.min30*3;
-  var _ppcap=document.getElementById('pp-cap');if(_ppcap)_ppcap.textContent = CONFIG.presaleCapacity;
-  document.getElementById('pkg1-price').textContent = CONFIG.prices.presale3+' Kč';
-  document.getElementById('pkg2-price').textContent = (CONFIG.prices.presale3*2)+' Kč';
-  document.getElementById('pp-refund-date').textContent = CONFIG.refundDate||'—';
-  document.getElementById('qr-refund').textContent = CONFIG.refundDate||'—';
+  var _sp=document.getElementById('stat-price'); if(_sp) _sp.textContent='od '+CONFIG.prices.min15;
+  var _ppp=document.getElementById('pp-price'); if(_ppp) _ppp.textContent=CONFIG.prices.presale3;
+  var _ppo=document.getElementById('pp-orig'); if(_ppo) _ppo.textContent=CONFIG.prices.min30*3;
+  var _ppcap=document.getElementById('pp-cap'); if(_ppcap) _ppcap.textContent=CONFIG.presaleCapacity;
+  var _p1=document.getElementById('pkg1-price'); if(_p1) _p1.textContent=CONFIG.prices.presale3+' Kč';
+  var _p2=document.getElementById('pkg2-price'); if(_p2) _p2.textContent=(CONFIG.prices.presale3*2)+' Kč';
+  // Refund date — hide the whole line if no date set
+  var ppRefundEl = document.getElementById('pp-refund-date');
+  if(ppRefundEl){
+    if(CONFIG.refundDate){ ppRefundEl.textContent = CONFIG.refundDate; }
+    else { var ppRefundRow = ppRefundEl.closest('div[style]'); if(ppRefundRow) ppRefundRow.style.display='none'; }
   }
-  document.getElementById('contest-time').textContent = CONFIG.contestTime;
-  document.getElementById('contest-prize').textContent = CONFIG.contestPrize;
+  var qrRefundEl = document.getElementById('qr-refund');
+  if(qrRefundEl) qrRefundEl.textContent = CONFIG.refundDate||'—';
+  var ctEl=document.getElementById('contest-time'); if(ctEl) ctEl.textContent = CONFIG.contestTime||'brzy';
+  var _cpr=document.getElementById('contest-prize'); if(_cpr) _cpr.textContent=CONFIG.contestPrize;
   var csp=document.getElementById('cs-prize'); if(csp) csp.textContent=CONFIG.contestPrize;
   var cpp=document.getElementById('cp-prize'); if(cpp) cpp.textContent='poukaz na jízdy v hodnotě '+CONFIG.contestPrize+' Kč';
 })();
