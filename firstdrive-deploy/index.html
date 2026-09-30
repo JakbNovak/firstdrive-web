@@ -770,10 +770,6 @@ function apiGet(endpoint){return fetch('/api/'+endpoint).then(r=>r.json());}
   document.getElementById('pkg2-price').textContent = (CONFIG.prices.presale3*2)+' Kč';
   document.getElementById('pp-refund-date').textContent = CONFIG.refundDate||'—';
   document.getElementById('qr-refund').textContent = CONFIG.refundDate||'—';
-  // Zablokuj předprodej pokud není datum vrácení
-  if(!CONFIG.refundDate||CONFIG.refundDate==='[datum]'){
-    var ppb=document.getElementById('pp-btn');
-    if(ppb){ppb.textContent='Předprodej brzy';ppb.disabled=true;}
   }
   document.getElementById('contest-time').textContent = CONFIG.contestTime;
   document.getElementById('contest-prize').textContent = CONFIG.contestPrize;
